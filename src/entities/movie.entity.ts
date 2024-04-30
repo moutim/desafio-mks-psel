@@ -10,4 +10,10 @@ export class Movie {
 
   @Column()
   genre: string;
+
+  @Column()
+  director: string;
+
+  @Column()
+  year: number;
 }
