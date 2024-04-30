@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { join } from 'path';
+import { MoviesModule } from './modules/movies.module';
 
 @Module({
   imports: [
@@ -19,8 +20,10 @@ import { join } from 'path';
         password: configService.get('DB_PASSWORD'),
         name: configService.get('DB_NAME'),
         entities: [join(process.cwd(), 'dist/**/*.entity.js')],
+        synchronize: true,
       }),
     }),
+    MoviesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
