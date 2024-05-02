@@ -23,15 +23,18 @@ import { AuthMiddleware } from './middlewares/auth.middlewares';
       useFactory: async (configService: ConfigService) =>
         configService.get('typeorm'),
     }),
-    MoviesModule,
-    UsersModule,
     AuthModule,
+    UsersModule,
+    MoviesModule,
   ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(AuthMiddleware)
-      .forRoutes({ path: '/movies', method: RequestMethod.ALL });
+      .forRoutes(
+        { path: '/movies', method: RequestMethod.ALL },
+        { path: '/users', method: RequestMethod.ALL },
+      );
   }
 }
