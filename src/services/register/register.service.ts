@@ -17,7 +17,7 @@ export class RegisterService {
     });
 
     if (checkUser) {
-      throw new ConflictException('Usuário já cadastrado com este email.');
+      throw new ConflictException('User already registered with this email.');
     }
 
     const encodedPassword = await hash(createUserDto.password, 8);

@@ -18,7 +18,7 @@ export class UsersService {
     const users = await this.userRepository.find();
 
     if (!users) {
-      throw new NotFoundException('Não há usuários cadastrados.');
+      throw new NotFoundException('There are no registered users.');
     }
 
     return users;
@@ -28,7 +28,7 @@ export class UsersService {
     const user = await this.userRepository.findOne({ where: { id } });
 
     if (!user) {
-      throw new NotFoundException(`Usuário com id ${id} não encontrado.`);
+      throw new NotFoundException(`User with id ${id} not found.`);
     }
 
     delete user.password;
@@ -39,7 +39,7 @@ export class UsersService {
     const user = await this.userRepository.findOne({ where: { id } });
 
     if (!user) {
-      throw new NotFoundException(`Usuário com id ${id} não encontrado.`);
+      throw new NotFoundException(`User with id ${id} not found.`);
     }
 
     if (updateInfo.email) {
@@ -48,7 +48,7 @@ export class UsersService {
       });
 
       if (checkEmail && checkEmail.id !== user.id) {
-        throw new ConflictException('Usuário já cadastrado com este email.');
+        throw new ConflictException('User already registered with this email.');
       }
     }
 
@@ -62,11 +62,11 @@ export class UsersService {
     const user = await this.userRepository.findOne({ where: { id } });
 
     if (!user) {
-      throw new NotFoundException(`Usuário com id ${id} não encontrado.`);
+      throw new NotFoundException(`User with id ${id} not found.`);
     }
 
     await this.userRepository.delete(user);
 
-    return { message: 'Usuário deletado com sucesso.' };
+    return { message: 'User deleted successfully.' };
   }
 }

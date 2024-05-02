@@ -17,7 +17,9 @@ export class AuthService {
     });
 
     if (!user) {
-      throw new NotFoundException({ message: 'Usuário ou senha incorreto.' });
+      throw new NotFoundException({
+        message: 'Incorrect username or password.',
+      });
     }
 
     const payload = { email: user.email, id: user.id };
