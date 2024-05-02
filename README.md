@@ -31,14 +31,15 @@ This repository contains a Nest.js project developed for a technical challenge. 
 
 The application is hosted on Heroku, and you can access the documentation through this link: Documentation
 
-
+- Link do Deploy
+  
 ## Documentation
 
-https://mks-backend-challenge-lf.herokuapp.com/api#/
+-Link do Swagger
 
 ## Instalation and running the app locally
 
-Assuming you have postgresql and redis on your computer locally run the following commands:
+If you have **PostgreSQL** installed locally on your computer, execute the following commands:
 
 ```bash
 #to install dependencies
@@ -74,3 +75,4 @@ In both cases, if everything goes well, you can access the documentation through
 - Redis - First project.
 - Postgresql - 1 months.
 - Render - 6 months.
+- React.js - 2 years.
