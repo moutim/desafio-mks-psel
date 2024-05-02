@@ -1,5 +1,5 @@
 import { Controller, Post, Body } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
 import { AuthService } from 'src/services/auth/auth.service';
 import { CreateLoginDto } from 'src/services/auth/dto/create-login.dto';
 
@@ -8,6 +8,21 @@ import { CreateLoginDto } from 'src/services/auth/dto/create-login.dto';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        email: {
+          type: 'string',
+          example: 'mks@email.com',
+        },
+        password: {
+          type: 'string',
+          example: 'password',
+        },
+      },
+    },
+  })
   @Post()
   create(@Body() infoLogin: CreateLoginDto) {
     return this.authService.login(infoLogin);
