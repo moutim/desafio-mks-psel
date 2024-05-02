@@ -1,29 +1,28 @@
-version: '3.7'
+version: '3'
 
 services:
-  app:
+  nestjs-app:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    volumes:
-      - .:/app
     environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_USERNAME=admin
-      - DB_PASSWORD=password
-      - DB_NAME=movies
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: desafio-db
+      SECRET_KEY: SuperKey
     depends_on:
-      - db
+      - postgres
 
-  db:
-    image: postgres:latest
+  postgres:
+    image: postgres
     restart: always
-    environment:
-      POSTGRES_DB: movies
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: desafio-db
