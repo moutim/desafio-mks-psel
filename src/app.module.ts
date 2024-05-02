@@ -8,7 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MoviesModule } from './modules/movies.module';
 import { UsersModule } from './modules/users.module';
-import { LoginModule } from './modules/login.module';
+import { AuthModule } from './modules/auth.module';
 import config from './database/config';
 import { AuthMiddleware } from './middlewares/auth.middlewares';
 
@@ -25,7 +25,7 @@ import { AuthMiddleware } from './middlewares/auth.middlewares';
     }),
     MoviesModule,
     UsersModule,
-    LoginModule,
+    AuthModule,
   ],
 })
 export class AppModule implements NestModule {

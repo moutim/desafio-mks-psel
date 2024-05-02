@@ -5,7 +5,7 @@ import { User } from 'src/entities/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class LoginService {
+export class AuthService {
   constructor(
     private jwtService: JwtService,
     @InjectRepository(User) private userRepository: Repository<User>,

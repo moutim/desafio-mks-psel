@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { LoginService } from '../services/login/login.service';
-import { LoginController } from '../controllers/login/login.controller';
+import { AuthController } from '../controllers/auth/auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from 'src/entities/user.entity';
 import { ConfigModule } from '@nestjs/config';
+import { AuthService } from 'src/services/auth/auth.service';
 
 @Module({
   imports: [
@@ -15,8 +15,8 @@ import { ConfigModule } from '@nestjs/config';
       signOptions: { expiresIn: '1d' },
     }),
   ],
-  controllers: [LoginController],
-  providers: [LoginService],
-  exports: [LoginService],
+  controllers: [AuthController],
+  providers: [AuthService],
+  exports: [AuthService],
 })
-export class LoginModule {}
+export class AuthModule {}
