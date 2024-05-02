@@ -9,7 +9,9 @@
     "typeorm": "npm run build && npx typeorm -d dist/database/config.js",
     "migration:generate": "npm run typeorm -- migration:generate",
     "migration:run": "npm run typeorm -- migration:run",
-    "database:create": "npm run typeorm -- schema:sync",
+    "db:create": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs db:create -d src/database/config.ts",
+    "db:drop": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs db:drop -d src/database/config.ts",
+    "db:restore": "npm run db:drop && npm run db:create && npm run migration:run",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -33,7 +35,8 @@
     "pg": "^8.11.5",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
-    "typeorm": "^0.3.20"
+    "typeorm": "^0.3.20",
+    "typeorm-extension": "^3.5.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
