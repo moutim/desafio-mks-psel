@@ -22,52 +22,55 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Description - Backend Challenge
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) 
+This repository contains a Nest.js project developed for a technical challenge. The goal is to create a movie catalog that can only be accessed by authenticated users.
 
-## Installation
+## Deployment
+
+The application is hosted on Heroku, and you can access the documentation through this link: Documentation
+
+
+## Documentation
+
+https://mks-backend-challenge-lf.herokuapp.com/api#/
+
+## Instalation and running the app locally
+
+Assuming you have postgresql and redis on your computer locally run the following commands:
 
 ```bash
-$ npm install
-```
+#to install dependencies
+$ npm i
 
-## Running the app
+#to run migrations
+$ npm run db:restore
 
-```bash
-# development
-$ npm run start
-
-# watch mode
+# to start in development
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
+
+## Running with docker
+
+To run the application with docker, first you need to deactivate postgresql if it's activated, then run the following commands:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# to run docker-compose
+$ docker-compose up -d
 ```
 
-## Support
+In both cases, if everything goes well, you can access the documentation through: localhost:3000/api/
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Experience
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- TypeScript - 6 months.
+- Nest.js - First project.
+- TypeORM - First project.
+- JWT - 2 years.
+- Swagger - 2 years.
+- Docker - 1 years.
+- Redis - First project.
+- Postgresql - 1 months.
+- Render - 6 months.
