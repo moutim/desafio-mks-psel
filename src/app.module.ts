@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MoviesModule } from './modules/movies.module';
+import { UsersModule } from './modules/users.module';
 import config from './database/config';
 
 @Module({
@@ -16,6 +17,7 @@ import config from './database/config';
         configService.get('typeorm'),
     }),
     MoviesModule,
+    UsersModule,
   ],
 })
 export class AppModule {}
