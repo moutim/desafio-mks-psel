@@ -12,10 +12,11 @@ import { ConfigModule } from '@nestjs/config';
     TypeOrmModule.forFeature([User]),
     JwtModule.register({
       secret: process.env.SECRET_KEY,
-      signOptions: { expiresIn: '6h' },
+      signOptions: { expiresIn: '1d' },
     }),
   ],
   controllers: [LoginController],
   providers: [LoginService],
+  exports: [LoginService],
 })
 export class LoginModule {}
