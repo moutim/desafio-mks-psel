@@ -3,41 +3,16 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/entities/user.entity';
 import { Repository } from 'typeorm';
-import { hash } from 'bcryptjs';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(User) private userRepository: Repository<User>,
   ) {}
-
-  async create(createUserDto: CreateUserDto) {
-    const checkUser = await this.userRepository.findOne({
-      where: { email: createUserDto.email },
-    });
-
-    if (checkUser) {
-      throw new ConflictException('Usuário já cadastrado com este email.');
-    }
-
-    const encodedPassword = await hash(createUserDto.password, 8);
-
-    const user = {
-      name: createUserDto.name,
-      email: createUserDto.email,
-      password: encodedPassword,
-    };
-
-    const userCreated = await this.userRepository.save(user);
-
-    delete userCreated.password;
-    return userCreated;
-  }
 
   async findAll() {
     const users = await this.userRepository.find();

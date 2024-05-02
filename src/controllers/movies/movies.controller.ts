@@ -13,7 +13,7 @@ import { UpdateMovieDto } from '../../services/movie/dto/update-movie.dto';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @ApiBearerAuth()
-@ApiTags('movies')
+@ApiTags('Movies')
 @Controller('movies')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}

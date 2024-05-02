@@ -11,6 +11,7 @@ import { UsersModule } from './modules/users.module';
 import { AuthModule } from './modules/auth.module';
 import config from './database/config';
 import { AuthMiddleware } from './middlewares/auth.middlewares';
+import { RegisterModule } from './modules/register.module';
 
 @Module({
   imports: [
@@ -24,8 +25,9 @@ import { AuthMiddleware } from './middlewares/auth.middlewares';
         configService.get('typeorm'),
     }),
     AuthModule,
-    UsersModule,
+    RegisterModule,
     MoviesModule,
+    UsersModule,
   ],
 })
 export class AppModule implements NestModule {
