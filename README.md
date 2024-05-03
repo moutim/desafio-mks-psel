@@ -29,7 +29,7 @@ This repository contains a Nest.js project developed for a technical challenge. 
   
 ## Deployment and Documentation
 
-The application is hosted on Render, and you can access the documentation through this link:
+The application is hosted on Render in a dockerized environment, and you can access the documentation through this link:
 
 **RENDER IT TAKES A MINUTE TO RUN SERVER**
 [Swagger Documentation on Render](https://desafio-mks-psel.onrender.com/api)
