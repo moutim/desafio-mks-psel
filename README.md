@@ -71,7 +71,7 @@ In both cases, if everything goes well, you can access the documentation through
 - JWT - 2 years.
 - Swagger - 2 years.
 - Docker - 1 years.
-- Redis - First project.
+- Cache Manager - First project.
 - Postgresql - 1 months.
 - Render - 6 months.
 - React.js - 2 years.
