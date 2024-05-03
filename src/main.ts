@@ -5,8 +5,8 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
-    .setTitle('Desafio MKS Desenvolvimento')
-    .setDescription('API para um catalogo de filmes')
+    .setTitle('MKS Development Challenge')
+    .setDescription('API for a movie catalog')
     .setVersion('1.0')
     .addTag('')
     .addBearerAuth()
