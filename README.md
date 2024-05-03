@@ -26,20 +26,19 @@
 
 [Nest](https://github.com/nestjs/nest) 
 This repository contains a Nest.js project developed for a technical challenge. The goal is to create a movie catalog that can only be accessed by authenticated users.
-
-## Deployment
-
-The application is hosted on Heroku, and you can access the documentation through this link: Documentation
-
-- Link do Deploy
   
-## Documentation
+## Deployment and Documentation
 
--Link do Swagger
+The application is hosted on Render, and you can access the documentation through this link:
+
+**RENDER IT TAKES A MINUTE TO RUN SERVER**
+[Swagger Documentation on Render](https://desafio-mks-psel.onrender.com/api)
 
 ## Instalation and running the app locally
 
 If you have **PostgreSQL** installed locally on your computer, execute the following commands:
+
+Set the enviroments variables on file **.env.example**
 
 ```bash
 #to install dependencies
