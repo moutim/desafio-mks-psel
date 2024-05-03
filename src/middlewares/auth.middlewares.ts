@@ -8,7 +8,7 @@ export class AuthMiddleware implements NestMiddleware {
     let token = req.headers.authorization;
 
     if (!token) {
-      throw new UnauthorizedException('Token de acesso não fornecido');
+      throw new UnauthorizedException('Access token not provided.');
     }
 
     if (token.includes('Bearer')) token = token.split(' ')[1];
@@ -20,7 +20,7 @@ export class AuthMiddleware implements NestMiddleware {
 
       next();
     } catch (err) {
-      throw new UnauthorizedException('Token de acesso inválido');
+      throw new UnauthorizedException('Invalid or expired access token.');
     }
   }
 }
